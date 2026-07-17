@@ -5,154 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Methods Demonstration</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            margin: 0;
-            padding: 0;
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f6f9; 
+            margin: 0; 
+            padding: 0; 
         }
 
-        header {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 20px;
+        header { 
+            background-color: #2c3e50; 
+            color: white; 
+            text-align: center; 
+            padding: 20px; 
         }
 
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 30px auto;
-            background-color: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        .container { 
+            width: 90%; 
+            max-width: 1000px; 
+            margin: 30px auto; 
+            background-color: white; 
+            padding: 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); 
         }
 
-        h2 {
-            color: #2c3e50;
+        h2 { 
+            color: #2c3e50; 
         }
 
-        .section-title {
-            background-color: #e8f0fe;
-            padding: 10px;
-            border-left: 5px solid #3498db;
-            margin-top: 25px;
+        .section-title { 
+            background-color: #e8f0fe; 
+            padding: 10px; 
+            border-left: 5px solid #3498db; 
+            margin-top: 25px; 
         }
 
-        #main-heading {
-            color: #2980b9;
-            padding: 10px;
-            border: 2px dashed #2980b9;
-            text-align: center;
+        #main-heading { 
+            color: #2980b9; 
+            padding: 10px; 
+            border: 2px dashed #2980b9; 
+            text-align: center; 
             transition: background-color 0.3s; 
         }
 
-        .student-card {
-            background-color: #ecf0f1;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            border-left: 5px solid #95a5a6;
-            transition: background-color 0.3s; /* Smooth highlight for the whole block */
-        }
-        
-        .student-card h3 {
-            margin-top: 0;
-            color: #2c3e50;
-            border-bottom: 1px solid #bdc3c7;
-            padding-bottom: 5px;
+        .student-card { 
+            background-color: #ecf0f1; 
+            padding: 15px; 
+            margin: 10px 0; 
+            border-radius: 8px; 
+            border-left: 5px solid #95a5a6; 
+            transition: background-color 0.3s; 
         }
 
-        .student-card p {
-            margin: 8px 0;
+        .student-card h3 { 
+            margin-top: 0; 
+            color: #2c3e50; 
+            border-bottom: 1px solid #bdc3c7; 
+            padding-bottom: 5px; 
         }
 
-        .course {
-            padding: 8px;
-            margin: 6px 0;
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            transition: background-color 0.3s; /* Smooth highlight for the whole block */
+        .student-card p { 
+            margin: 8px 0; 
         }
 
-        .important {
-            color: #c0392b;
-            font-weight: bold;
+        .course { 
+            padding: 8px; 
+            margin: 6px 0; 
+            background-color: #f8f9fa; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+            transition: background-color 0.3s; 
         }
 
-        button {
-            margin: 8px 5px;
-            padding: 10px 14px;
-            border: none;
-            background-color: #3498db;
-            color: white;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: 0.3s;
+        .important { 
+            color: #c0392b; 
+            font-weight: bold; 
         }
 
-        button:hover {
-            background-color: #217dbb;
+        button { 
+            margin: 8px 5px; 
+            padding: 10px 14px; 
+            border: none; 
+            background-color: #3498db; 
+            color: white; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            font-size: 14px; 
+            transition: 0.3s; 
         }
 
-        .reset-btn {
-            background-color: #e74c3c;
+        button:hover { 
+            background-color: #217dbb; 
         }
 
-        .reset-btn:hover {
-            background-color: #c0392b;
+        .reset-btn { 
+            background-color: #e74c3c; 
         }
 
-        #output {
-            background-color: #1e1e1e;
-            color: #00ff90;
-            padding: 15px;
-            min-height: 100px;
-            border-radius: 8px;
-            margin-top: 20px;
-            white-space: pre-line;
-            font-family: Consolas, monospace;
-            line-height: 1.5;
+        .reset-btn:hover { 
+            background-color: #c0392b; 
+        }
+
+        #output { 
+            background-color: #1e1e1e; 
+            color: #00ff90; 
+            padding: 15px; 
+            min-height: 100px; 
+            border-radius: 8px; 
+            margin-top: 20px; 
+            white-space: pre-line; 
+            font-family: Consolas, monospace; 
+            line-height: 1.5; 
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1 id="main-heading">DOM Methods Demonstration</h1>
+        <h1 id="main-heading">JavaScript DOM Selection Methods</h1>
     </header>
 
     <div class="container">
-
-        <div class="section-title">
-            <h2>Student Details</h2>
-        </div>
-
+        <div class="section-title"><h2>Student Details</h2></div>
         <div class="student-card" id="stdnt1">
-            <h3>Student 1</h3>
-            <p><strong>Name:</strong> Emma</p>
-            <p><strong>Course:</strong> Python</p>
+            <h3>Student 1</h3><p><strong>Name:</strong> Emma</p><p><strong>Course:</strong> Python</p>
         </div>
-
         <div class="student-card" id="stdnt2">
-            <h3>Student 2</h3>
-            <p><strong>Name:</strong> Liam</p>
-            <p><strong>Course:</strong> Java</p>
+            <h3>Student 2</h3><p><strong>Name:</strong> Liam</p><p><strong>Course:</strong> Java</p>
         </div>
-
         <div class="student-card" id="stdnt3">
-            <h3>Student 3</h3>
-            <p><strong>Name:</strong> Olivia</p>
-            <p><strong>Course:</strong> HTML</p>
+            <h3>Student 3</h3><p><strong>Name:</strong> Olivia</p><p><strong>Course:</strong> HTML</p>
         </div>
 
-        <div class="section-title">
-            <h2>Available Courses</h2>
-        </div>
-
+        <div class="section-title"><h2>Available Courses</h2></div>
         <div id="course-list">
             <div id="html-course" class="course">HTML</div>
             <div class="course important">CSS</div>
@@ -160,10 +145,7 @@
             <div class="course important">React</div>
         </div>
 
-        <div class="section-title">
-            <h2>DOM Method Buttons</h2>
-        </div>
-
+        <div class="section-title"><h2>DOM Method Buttons</h2></div>
         <button onclick="demoGetElementById()">getElementById()</button>
         <button onclick="demoGetElementsByClassName()">getElementsByClassName()</button>
         <button onclick="demoGetElementsByTagName()">getElementsByTagName()</button>
@@ -172,8 +154,7 @@
         <button class="reset-btn" onclick="resetOutput()">Reset</button>
 
         <h2>Output:</h2>
-        <div id="output">Click any DOM method button to see the result.</div>
-
+        <div id="output">Click any button to see the result here.</div>
     </div>
 
     <script>
@@ -182,63 +163,56 @@
         }
 
         function clearHighlights() {
-            // Removes background color from all large blocks so only the active one shows
-            const allElements = document.querySelectorAll(".student-card, .course, #main-heading");
-            allElements.forEach(el => {
-                el.style.backgroundColor = "";
-            });
+            const allElements = document.querySelectorAll(".student-card, .course, #main-heading, p");
+            allElements.forEach(el => { el.style.backgroundColor = ""; });
         }
 
         function demoGetElementById() {
             clearHighlights();
             let element = document.getElementById("stdnt1");
-            element.style.backgroundColor = "#d1ecf1"; // Highlights the whole Student 1 block
-            
+            element.style.backgroundColor = "#d1ecf1"; 
+            document.getElementById("main-heading").innerText = "Selected using getElementById()";
             showOutput("Method: getElementById()\n\nIt selects one element using its id.\n\nSelected element id: stdnt1");
         }
 
         function demoGetElementsByClassName() {
             clearHighlights();
             let elements = document.getElementsByClassName("student-card");
-            for(let i = 0; i < elements.length; i++) {
-                elements[i].style.backgroundColor = "#d1ecf1"; // Highlights all 3 Student blocks
-            }
-            
-            showOutput("Method: getElementsByClassName()\n\nIt selects an HTMLCollection of all elements with this class.\n\nSelected class: student-card (" + elements.length + " found)");
+            for(let i = 0; i < elements.length; i++) { elements[i].style.backgroundColor = "#d1ecf1"; }
+            document.getElementById("main-heading").innerText = "Selected using getElementsByClassName()";
+            showOutput("Number of student cards selected: 3");
         }
 
         function demoGetElementsByTagName() {
             clearHighlights();
-            // Targets the course <div> blocks to match your instructor's earlier example
-            let elements = document.getElementById("course-list").getElementsByTagName("div");
-            for(let i = 0; i < elements.length; i++) {
-                elements[i].style.backgroundColor = "#d1ecf1"; // Highlights all 4 Course blocks
-            }
-            
-            showOutput("Method: getElementsByTagName()\n\nIt selects an HTMLCollection of all elements with this tag name.\n\nSelected tag: div inside the course list (" + elements.length + " found)");
+            let elements = document.getElementsByTagName("p");
+            for(let i = 0; i < elements.length; i++) { elements[i].style.backgroundColor = "#d1ecf1"; }
+            document.getElementById("main-heading").innerText = "Selected using getElementsByTagName()";
+            showOutput("Tag selected: p");
         }
 
         function demoQuerySelector() {
             clearHighlights();
-            let element = document.querySelector(".student-card");
-            element.style.backgroundColor = "#d1ecf1"; // Highlights ONLY the very first Student block
+            let element = document.querySelector(".important");
+            if (element) element.style.backgroundColor = "#d1ecf1"; 
             
-            showOutput("Method: querySelector()\n\nIt selects only the FIRST element that matches the CSS selector.\n\nSelected element: The first .student-card block");
+            document.getElementById("main-heading").innerText = "Selected using querySelector()";
+            showOutput("Only the first important course is selected.");
         }
 
         function demoQuerySelectorAll() {
             clearHighlights();
-            let elements = document.querySelectorAll(".course");
-            elements.forEach(el => {
-                el.style.backgroundColor = "#d1ecf1"; // Highlights all 4 Course blocks
-            });
+            let elements = document.querySelectorAll(".important");
+            elements.forEach(el => { el.style.backgroundColor = "#d1ecf1"; });
             
-            showOutput("Method: querySelectorAll()\n\nIt selects a NodeList of ALL elements matching the CSS selector.\n\nSelected elements: .course (" + elements.length + " found)");
+            document.getElementById("main-heading").innerText = "Selected using querySelectorAll()";
+            showOutput("Number of important courses selected: 2");
         }
 
         function resetOutput() {
             clearHighlights();
-            showOutput("Click any DOM method button to see the result.");
+            document.getElementById("main-heading").innerText = "Online Course Registration Page";
+            showOutput("Click any button to see the result here.");
         }
     </script>
 </body>
